@@ -2,15 +2,18 @@ body{
     font-family: Arial;
     background-color: rgb(58, 176, 255);
 }
+h1::selection,h2::selection,h3::selection,p::selection{
+    background-color: rgb(196, 255, 58);
+}
 .inputsection{
-    margin: 2rem;
+    margin: 1rem;
     display: flex;
     justify-content: center;
 }
 input, button{
     border:none;
     margin: 1rem;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 1rem 2rem;
     font-size: 1rem;
 }
@@ -20,34 +23,33 @@ button{
     font-weight: bolder;
     letter-spacing: 3px;
     background-color: rgb(0, 104, 189);
-    transition: 0.5s;
 }
 button:hover{
     background-color: rgb(0, 69, 126);
 }
-.country{
+section{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 article{
     max-width: 13rem;
-    margin: 2rem;
+    margin: 1rem;
     padding: 2rem;
     text-align: center;
     border-radius: 50px;
-    background-color: white;
-    box-shadow: rgb(0, 104, 189) 5px 5px 5px;
+    background-color: rgb(191, 226, 255);
+    box-shadow: rgb(0, 104, 189) 5px 5px 0px;
 }
 h1{
     font-size: 1.7rem;
 }
 h2{
-    font-size: 1.3rem;
+    font-size: 1rem;
     opacity: 0.5;
 }
 img{
-    width: 13rem;
-    height: auto;
+    width: 100%;
     border-radius: 15px;
     border:rgb(190, 190, 190) 1px solid;
 }
