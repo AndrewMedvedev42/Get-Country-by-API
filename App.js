@@ -14,8 +14,36 @@ const countryContainer = document.getElementById("country")
 
 buttonElem.addEventListener('click', ()=>{getRequest(inputField.value)})
 
+const loadingMessage = document.getElementById("loadingMessage")
+const articleElem = document.getElementById("displayContent")
+const articleElem2 = document.getElementById("displayContent2")
+
+function hideLoadTheMessage(){
+  loadingMessage.classList.add("elementIsNotVisible")
+  console.log("message is removed");
+}
+
+function loadTheMessage(){
+  loadingMessage.classList.remove("elementIsNotVisible")
+  console.log("message is added");
+}
+
+function hideElement(){
+  articleElem.classList.add("elementIsNotVisible")
+  articleElem2.classList.add("elementIsNotVisible")
+  console.log("hidden");
+}
+
+function showElemnt(){
+  articleElem.classList.remove("elementIsNotVisible")
+  articleElem2.classList.remove("elementIsNotVisible")
+  console.log("visible");
+}
+
 function getRequest(prop){
   const link = `https://restcountries.eu/rest/v2/name/${prop}`
+  hideElement()
+  loadTheMessage()
 
   fetch(link)
     .then((res)=>{return res.json()})
@@ -25,6 +53,7 @@ function getRequest(prop){
       countryName.textContent = data[0].name
       populationSection.textContent = `Population: ${data[0].population}`
       capitalSection.textContent = `Capital City: ${data[0].capital}`
+
       const neighbour = data[0].borders[0]
 
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`)
@@ -37,16 +66,21 @@ function getRequest(prop){
         imageFlag2.src = ""
         populationSection2.textContent = ""
         capitalSection2.textContent = ""
+        hideLoadTheMessage()
+        showElemnt()
       }else{
         console.log(data);
         imageFlag2.src = data.flag
         countryName2.textContent = data.name
         populationSection2.textContent = `Population: ${data.population}`
         capitalSection2.textContent = `Capital City: ${data.capital}`
+        hideLoadTheMessage()
+        showElemnt()
       }
 
     
     }).catch(err=>alert("Please, specify a Country name correctly!"))
 }
 
+hideLoadTheMessage()
 getRequest("USA")

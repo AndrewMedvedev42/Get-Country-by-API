@@ -5,6 +5,14 @@ body{
 h1::selection,h2::selection,h3::selection,p::selection{
     background-color: rgb(196, 255, 58);
 }
+.elementIsNotVisible{
+    visibility: hidden;
+}
+
+.elementIsVisible{
+    visibility:visible;
+}
+
 .inputsection{
     margin: 1rem;
     display: flex;
