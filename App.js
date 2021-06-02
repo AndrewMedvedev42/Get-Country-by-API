@@ -79,7 +79,12 @@ function getRequest(prop){
       }
 
     
-    }).catch(err=>alert("Please, specify a Country name correctly!"))
+    }).catch(err=>reload())
+}
+
+function reload(){
+  alert("An error has occurred!!")
+  getRequest("USA")
 }
 
 hideLoadTheMessage()
