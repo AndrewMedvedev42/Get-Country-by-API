@@ -46,7 +46,7 @@ function getRequest(prop){
       }
 
     
-    })
+    }).catch(err=>alert("Please, specify a Country name correctly!"))
 }
 
 getRequest("USA")
