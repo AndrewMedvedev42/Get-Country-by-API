@@ -49,4 +49,4 @@ function getRequest(prop){
     })
 }
 
-getRequest("japan")
+getRequest("USA")
