@@ -84,7 +84,8 @@ function getRequest(prop){
 
 function reload(){
   alert("An error has occurred!!")
-  getRequest("USA")
+  hideLoadTheMessage()
+  showElemnt()
 }
 
 hideLoadTheMessage()
