@@ -6,7 +6,7 @@ h1::selection,h2::selection,h3::selection,p::selection{
     background-color: rgb(196, 255, 58);
 }
 .elementIsNotVisible{
-    visibility: hidden;
+    display: none
 }
 
 .elementIsVisible{
@@ -42,6 +42,7 @@ section{
     flex-wrap: wrap;
 }
 article{
+    animation: fadeIn 5s;
     max-width: 13rem;
     margin: 1rem;
     padding: 2rem;
@@ -70,4 +71,9 @@ img{
         justify-content: center;
         align-items: center;
     }
+  }
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    10% {opacity:1;}
   }
